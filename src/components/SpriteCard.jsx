@@ -37,14 +37,12 @@ const ARBOK = {
 }
 
 const getData = (pokemon) => {
-  if (!pokemon) {
-    return ARBOK
-  }
-  // pokemon no es undefined / null
-  return {
-    ... pokemon,
-    spriteUrl: pokemon.isShiny ? pokemon.officialArtworkShinyUrl : pokemon.officialArtworkFrontUrl,
-  }
+  return pokemon
+    ? {
+        ... pokemon,
+        spriteUrl: pokemon.isShiny ? pokemon.officialArtworkShinyUrl : pokemon.officialArtworkFrontUrl,
+      }
+    : ARBOK
 }
 
 export default SpriteCard

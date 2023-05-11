@@ -3,9 +3,9 @@ import { Box, Card, CardBody, Spinner, useToast } from '@chakra-ui/react'
 
 import SpriteCard from './SpriteCard'
 import SearchBox from './SearchBox'
-
-import { useFetchPokemon } from '../hooks/useFetchPokemon'
 import Details from './Details'
+
+import useFetchPokemon from '../hooks/useFetchPokemon'
 
 const Pokedex = () => {
   const [ search, setSearch ] = useState('')

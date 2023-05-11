@@ -1,11 +1,13 @@
+import getErrorDescription from '../utils/httpErrors'
+
 const BASE_URL = 'https://pokeapi.co/api/v2/pokemon'
 
 const getPokemon = async (searchStr) => {
     const url = `${BASE_URL}/${searchStr}/`
     const res = await fetch(url)
     if (res.status !== 200) {
-      console.log('res:', res.status, res.statusText)
-      throw new Error(res.statusText)
+      const errorDesc = getErrorDescription(res.status)
+      throw new Error(`${res.status} - ${errorDesc}`)
     }
     const data = await res.json()
     const sprites = data.sprites.other && data.sprites.other['official-artwork']
@@ -22,4 +24,4 @@ const getPokemon = async (searchStr) => {
     return pokemon
   }
   
-  export { getPokemon }
+  export default getPokemon

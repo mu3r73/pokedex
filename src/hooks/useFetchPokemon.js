@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { getPokemon } from '../helpers/getPokemon'
+import getPokemon from '../helpers/getPokemon'
 
 const useFetchPokemon = (searchStr) => {
   const [pokemon, setPokemon] = useState(undefined)
@@ -34,4 +34,4 @@ const useFetchPokemon = (searchStr) => {
   }
 }
 
-export { useFetchPokemon }
+export default useFetchPokemon

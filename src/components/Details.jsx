@@ -1,5 +1,8 @@
 import { Box, Text } from "@chakra-ui/react"
 
+import { hg2kg, dm2m } from '../utils/units'
+import { roundToOneDecimalDigit } from '../utils/numbers'
+
 const Details = (props) => {
   const { pokemon } = props
   const { id, name, types, height, weight, isShiny } = getData(pokemon)
@@ -32,18 +35,6 @@ const Details = (props) => {
   )
 }
 
-const hg2kg = (weight) => {
-  return weight * 0.1
-}
-
-const dm2m = (height) => {
-  return height * 0.1
-}
-
-const roundToOneDecimalDigit = (num) => {
-  return (Math.round(num) * 10) / 10
-}
-
 const ARBOK = {
   id: 24,
   name: 'arbok',
@@ -54,11 +45,7 @@ const ARBOK = {
 }
 
 const getData = (pokemon) => {
-  if (!pokemon) {
-    return ARBOK
-  }
-  // pokemon no es undefined / null
-  return pokemon
+  return pokemon ? pokemon : ARBOK
 }
 
 export default Details
