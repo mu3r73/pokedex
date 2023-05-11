@@ -2,10 +2,19 @@ Howto para deploy en github pages:
 - Deploying Vite App to GitHub Pages
 (https://dev.to/shashannkbawa/deploying-vite-app-to-github-pages-3ane)
 
-Resumen:
+Config:
+- crear nueva rama para los deploys
+git checkout -b github-pages
+- editar vite.config.js, agregar la siguiente línea en export default, antes de plugins:
+base: '/pokedex/',
+... donde 'pokedex' es es nombre del repo
+- guardar, commit
+
+Deploy:
 (... una vez hecha la configuración requerida)
-- npm run build
-- git add -f dist/
-- cp dist/*.jpg dist/assets/ (<-- fixme)
-- (commit & push)
-- git subtree push --prefix dist origin gh-pages
+npm run build
+git add -f dist/
+cp dist/*.jpg dist/assets/ (<-- fixme)
+- commit, push
+(... una vez pusheado lo de dist/)
+git subtree push --prefix dist origin gh-pages
