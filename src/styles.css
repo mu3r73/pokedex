@@ -1,0 +1,74 @@
+.h-center {
+  display: flex;
+  justify-content: center;
+}
+
+.sprite-card {
+  background-color: whitesmoke;
+  width: 35rem;
+  min-height: 25rem;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 3rem 100%, 0% calc(100% - 3rem));
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 3rem 100%, 0% calc(100% - 3rem));
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-radius: 1rem;
+}
+
+.small-circle {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: crimson;
+  border-radius: 50%;
+  margin: 1rem;
+}
+
+.sprite-box {
+  /* background-color: lightslategray; */
+  background-image: url("pastel.jpg");
+  background-size: 110%;
+  transform: scaleX(-1) scaleY(-1);
+  border: .175rem;
+  border-style: solid;
+  border-color: black;
+  border-radius: .5rem;
+  /* margin-bottom: 1rem; */
+  padding: 1.5rem;
+}
+
+.sprite {
+  max-width: 18rem;
+  transform: scaleX(-1) scaleY(-1);
+}
+
+.sprite-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.big-circle {
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: crimson;
+  border-radius: 50%;
+  margin: 1rem;
+}
+
+.sprite-caption {
+  display: flex;
+  justify-content: right;
+  padding-bottom: 1rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column; 
+}
+
+.details-card {
+  width: 25rem;
+  min-height: 15rem;
+  background-color: gray;
+  padding: 3rem;
+  border-radius: 1rem;
+}
