@@ -1,0 +1,10 @@
+Howto para deploy en github pages:
+- Deploying Vite App to GitHub Pages
+(https://dev.to/shashannkbawa/deploying-vite-app-to-github-pages-3ane)
+
+Resumen:
+- npm run build
+- git add -f dist/
+- cp dist/*.jpg dist/assets/ (<-- fixme)
+- (commit & push)
+- git subtree push --prefix dist origin gh-pages
