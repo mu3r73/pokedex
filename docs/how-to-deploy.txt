@@ -3,6 +3,7 @@ Howto para deploy en github pages:
 (https://dev.to/shashannkbawa/deploying-vite-app-to-github-pages-3ane)
 
 Resumen:
+(... una vez hecha la configuración requerida)
 - npm run build
 - git add -f dist/
 - cp dist/*.jpg dist/assets/ (<-- fixme)
