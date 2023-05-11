@@ -18,10 +18,10 @@ const SpriteCard = (props) => {
       <Box className="sprite-footer">
         <div className="big-circle" />
         <Box className="sprite-caption">
-          <Heading as="h3" size="lg" color="black">
+          <Heading as="h4" size="md" color="black">
             { id }.&nbsp;
           </Heading>
-          <Heading as="h3" size="lg" color="black">
+          <Heading as="h4" size="md" color="black">
             { name }
           </Heading>
         </Box>
