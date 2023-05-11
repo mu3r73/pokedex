@@ -43,7 +43,7 @@
 .sprite-footer {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: center;
 }
 
 .big-circle {
@@ -57,7 +57,7 @@
 .sprite-caption {
   display: flex;
   justify-content: right;
-  padding-bottom: 1rem;
+  /* padding-bottom: 1.2rem; */
 }
 
 .column {
