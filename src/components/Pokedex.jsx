@@ -4,6 +4,7 @@ import { Box, Card, CardBody, Spinner, useToast } from '@chakra-ui/react'
 import SpriteCard from './SpriteCard'
 import SearchBox from './SearchBox'
 import Details from './Details'
+import Description from './Description'
 
 import useFetchPokemon from '../hooks/useFetchPokemon'
 
@@ -30,22 +31,19 @@ const Pokedex = () => {
   return (
     <Box className="h-center">
       <Box className="h-center">
-        <Card>
-          <CardBody>
-            <SpriteCard pokemon={ pokemon } />
-            <SearchBox onNewSearch={ onSearch } />
-          </CardBody>
-        </Card>
+        <CardBody>
+          <SpriteCard pokemon={ pokemon } />
+          <SearchBox onNewSearch={ onSearch } />
+        </CardBody>
       </Box>
       <Box className="column" ml={2}>
-        <Card>
-          <CardBody>
-            <Details pokemon={ pokemon } />
-            <Box mt={4}>
-              { isLoading && <Spinner size="xl" thickness=".2rem" color="blue.500" emptyColor="gray.500" /> }
-            </Box>
-          </CardBody>
-        </Card>
+        <CardBody>
+          <Details pokemon={ pokemon } />
+          <Description pokemon={ pokemon } />
+          <Box mt={4}>
+            { isLoading && <Spinner size="xl" thickness=".2rem" color="blue.500" emptyColor="gray.500" /> }
+          </Box>
+        </CardBody>
       </Box>
     </Box>
   )
