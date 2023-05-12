@@ -4,7 +4,7 @@
  * @returns número redondeado a 1 decimal
  */
 const roundToOneDecimalDigit = (num) => {
-  return (Math.round(num) * 10) / 10
+  return (num * 10) / 10
 }
 
 export {
