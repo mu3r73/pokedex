@@ -5,28 +5,31 @@ import { roundToOneDecimalDigit } from '../utils/numbers'
 
 const Details = (props) => {
   const { pokemon } = props
-  const { id, name, types, height, weight, isShiny } = getData(pokemon)
+  const { id, name, types, genus, height, weight, isShiny } = getData(pokemon)
   
   return (
     <Box className="details-card">
-      <Text as="p">
+      <Text as="p" fontSize="sm">
         Número: { id }
       </Text>
-      <Text as="p">
+      <Text as="p" fontSize="sm">
         Nombre: { name }
       </Text>
-      <Text as="p">
-        Tipos: { types.join(', ') }
+      <Text as="p" fontSize="sm">
+        Tipo{ types.length > 1 ? 's' : '' }: { types.join(', ') }
       </Text>
-      <Text as="p">
+      <Text as="p" fontSize="sm">
+        Género: { genus }
+      </Text>
+      <Text as="p" fontSize="sm">
         Peso: { roundToOneDecimalDigit(hg2kg(weight)) } kg
       </Text>
-      <Text as="p">
+      <Text as="p" fontSize="sm">
         Altura: { roundToOneDecimalDigit(dm2m(height)) } m
       </Text>
       {
         isShiny && (
-          <Text as="p">
+          <Text as="p" fontSize="sm">
             ¡Es shiny!
           </Text>
         )
@@ -38,7 +41,8 @@ const Details = (props) => {
 const ARBOK = {
   id: 24,
   name: 'arbok',
-  types: ['poison'],
+  types: ['veneno'],
+  genus: 'pokémon cobra',
   height: 35,
   weight: 650,
   isShiny: false,

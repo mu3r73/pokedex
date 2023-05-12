@@ -14,10 +14,17 @@
   border-radius: 1rem;
 }
 
+.crimson-background {
+  background-color: crimson;
+}
+
+.shiny-background {
+  background-color: goldenrod;
+}
+
 .small-circle {
   width: 1.2rem;
   height: 1.2rem;
-  background-color: crimson;
   border-radius: 50%;
   margin: 1rem;
 }
@@ -49,7 +56,6 @@
 .big-circle {
   width: 2.2rem;
   height: 2.2rem;
-  background-color: crimson;
   border-radius: 50%;
   margin: 1rem;
 }
@@ -67,8 +73,38 @@
 
 .details-card {
   width: 25rem;
-  min-height: 15rem;
-  background-color: gray;
-  padding: 3rem;
+  min-height: 13rem;
+  background-color: #7b7c81;
+  padding: 2.5rem;
   border-radius: 1rem;
+  border-color: black;
+  border-style: inset;
+  border-width: .1rem;
+}
+
+.description-card {
+  width: 25rem;
+  min-height: 14.2rem;
+  height: 14.2rem;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  border-color: black;
+  border-style: inset;
+  border-width: .1rem;
+  /* background-color: #192734; */
+  padding-top: 2.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+.description-text {
+  min-height: 3rem;
+}
+
+.description-btns {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
 }
