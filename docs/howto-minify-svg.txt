@@ -1,0 +1,5 @@
+minify svg:
+https://jakearchibald.github.io/svgomg/
+	
+svg to css-friendly string:
+https://www.svgbackgrounds.com/tools/svg-to-css/
