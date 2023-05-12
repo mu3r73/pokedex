@@ -13,8 +13,8 @@ base: '/pokedex/',
 Deploy:
 (... una vez hecha la configuración requerida)
 npm run build
-git add -f dist/
 cp dist/*.jpg dist/assets/ (<-- fixme)
+git add -f dist/
 - commit, push
 (... una vez pusheado lo de dist/)
 git subtree push --prefix dist origin gh-pages
