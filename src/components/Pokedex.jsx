@@ -35,37 +35,37 @@ const Pokedex = () => {
   }, [error])
 
   return (
-    <Card>
-        <CardBody>
-          <div className="main-title">
-            <div className="title-wrapper">
-              <div className="xl-circle"
-                onClick={ onXLCircleClick }
-              />
-              <Heading as="h3" className="main-title-text">pokédex</Heading>
-            </div>
+    <Card className="pokedex-card">
+      <CardBody>
+        <div className="main-title">
+          <div className="title-wrapper">
+            <div className="xl-circle"
+              onClick={ onXLCircleClick }
+            />
+            <Heading as="h3" className="main-title-text">pokédex</Heading>
           </div>
-          <div className="main-body">
+        </div>
+        <div className="main-body">
+          <Box className="h-center">
             <Box className="h-center">
-              <Box className="h-center">
-                <CardBody>
-                  <SpriteCard pokemon={ pokemon } />
-                  <SearchBox onNewSearch={ onSearch } />
-                </CardBody>
-              </Box>
-              <Box className="column" ml={2}>
-                <CardBody>
-                  <Details pokemon={ pokemon } />
-                  <Description pokemon={ pokemon } />
-                  <Box mt={4}>
-                    { isLoading && <Spinner size="xl" thickness=".2rem" color="blue.500" emptyColor="gray.500" /> }
-                  </Box>
-                </CardBody>
-              </Box>
+              <CardBody>
+                <SpriteCard pokemon={ pokemon } />
+                <SearchBox onNewSearch={ onSearch } />
+              </CardBody>
             </Box>
-          </div>
-        </CardBody>
-      </Card>
+            <Box className="column" ml={2}>
+              <CardBody>
+                <Details pokemon={ pokemon } />
+                <Description pokemon={ pokemon } />
+                <Box mt={4}>
+                  { isLoading && <Spinner size="xl" thickness=".2rem" color="blue.500" emptyColor="gray.500" /> }
+                </Box>
+              </CardBody>
+            </Box>
+          </Box>
+        </div>
+      </CardBody>
+    </Card>
   )
 }
 

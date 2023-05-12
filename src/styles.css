@@ -1,3 +1,10 @@
+.pokedex-card {
+  width: 70rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .main-title {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='423.445' height='77.838' viewBox='0 0 112.037 20.595'%3E%3Cpath d='M2.1.132c-1.09 0-1.968.88-1.968 1.974v16.383c0 1.093.878 1.973 1.968 1.973h33.84C48.243 18.861 57.064 9.13 75.303 9.13c12.2.045 24.401.049 36.6.2V2.107a1.967 1.967 0 0 0-1.968-1.974z' style='display:inline%3Bfill:none%3Bstroke:%23000%3Bstroke-width:.03'/%3E%3C/svg%3E");
   background-size: contain;
@@ -30,7 +37,6 @@
   margin-top: -8.5rem;
   padding-top: 7.3rem;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='424.439' height='270.836' viewBox='0 0 112.3 71.659'%3E%3Cpath d='M109.834.132 75.437.161c-19.892 0-28.581 11.577-42.805 11.556l-32.5-.036C.195 30.802.14 50.62.14 70.016c0 .837.973 1.51 2.182 1.51h107.664c1.209 0 2.182-.673 2.182-1.51V2.202c0-1.09-.635-2.07-2.333-2.07z' style='display:inline%3Bfill:none%3Bstroke:%23000%3Bstroke-width:.03'/%3E%3C/svg%3E");
-  content: "";
   background-size: contain;
   background-repeat: no-repeat;
   width: 67rem;
@@ -43,11 +49,11 @@
 }
 
 .sprite-card {
-  background-color: whitesmoke;
   width: 35rem;
   min-height: 25rem;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 3rem 100%, 0% calc(100% - 3rem));
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 3rem 100%, 0% calc(100% - 3rem));
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='213.155' height='175.417' viewBox='0 0 56.397 46.412'%3E%3Cg style='display:inline%3Bstroke:%23000%3Bfill:%23f5f5f5%3Bfill-opacity:1'%3E%3Cg style='stroke:%23000%3Bfill:%23f5f5f5%3Bfill-opacity:1'%3E%3Cpath d='M55.92 82.609h52.467c1.015 0 1.833.71 1.833 1.591v42.965c0 .882-.818 1.592-1.833 1.592H59.248c-1.015 0-5.161-4.346-5.161-5.228V84.2c0-.881.817-1.591 1.832-1.591z' style='fill:%23f5f5f5%3Bstroke:%23000%3Bstroke-width:.03%3Bfill-opacity:1' transform='translate(-53.954 -82.476)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
   padding-left: 3rem;
   padding-right: 3rem;
   border-radius: 1rem;
