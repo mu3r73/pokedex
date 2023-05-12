@@ -13,7 +13,6 @@ base: '/pokedex/',
 Deploy:
 (... una vez hecha la configuración requerida)
 npm run build
-cp dist/*.jpg dist/assets/ (<-- fixme)
 git add -f dist/
 - commit, push
 (... una vez pusheado lo de dist/)
