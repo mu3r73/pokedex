@@ -10,7 +10,7 @@ import useFetchPokemon from '../hooks/useFetchPokemon'
 import getRandomPokemonNumber from '../helpers/getRandomPokemonNumber'
 
 const Pokedex = () => {
-  const [ search, setSearch ] = useState('arbok')
+  const [ search, setSearch ] = useState('')
   const { pokemon, error, isLoading } = useFetchPokemon(search)
 
   const onSearch = (newSearchStr) => {

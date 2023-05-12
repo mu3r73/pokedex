@@ -31,7 +31,6 @@ const useFetchPokemon = (searchStr) => {
       setPokemon(newPokemon)
       setError(undefined)
     } catch (newError) {
-      console.error(newError)
       setError(`Error al buscar '${searchStr}': ${newError.message}`)
       setPokemon(undefined)
     }
