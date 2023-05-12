@@ -1,6 +1,6 @@
 import { Box, IconButton, Text } from "@chakra-ui/react"
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const Description = (props) => {
   const { pokemon } = props
@@ -18,6 +18,10 @@ const Description = (props) => {
   const getDescription = () => {
     return description ? description[currentIndex] : null
   }
+
+  useEffect(() => {
+    setCurrentIndex(0)
+  }, [description])
 
   return (
     <Box className="column description-card">
@@ -48,7 +52,7 @@ const modulo = (num, max) => {
 }
 
 const ARBOK = {
-  description: ['Tras confundir a su presa con el motivo de su cuerpo, se enrosca a su alrededor y la aferra, a la espera de que su pulso se detenga.']
+  description: ['アーボック']
 }
 
 const getData = (pokemon) => {
