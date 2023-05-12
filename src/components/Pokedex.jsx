@@ -39,11 +39,9 @@ const Pokedex = () => {
         <CardBody>
           <div className="main-title">
             <div className="title-wrapper">
-              <div className="xl-circle-border">
-                <div className="xl-circle blue-background"
-                  onClick={ onXLCircleClick }
-                />
-              </div>
+              <div className="xl-circle"
+                onClick={ onXLCircleClick }
+              />
               <Heading as="h3" className="main-title-text">pokédex</Heading>
             </div>
           </div>
