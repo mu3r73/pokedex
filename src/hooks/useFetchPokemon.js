@@ -16,18 +16,22 @@ const useFetchPokemon = (searchStr) => {
     setIsLoading(true)
     try {
       const newPokemon = await getPokemon(searchStr)
-      const { descs, genus } = await getSpeciesData(newPokemon.descriptionUrl)
+      const speciesData = await getSpeciesData(newPokemon.descriptionUrl)
+      const { descs, genus } = speciesData
       newPokemon.description = descs
       newPokemon.genus = genus
-      newPokemon.types = await Promise.all(
+      const types = await Promise.all(
         newPokemon.typesUrls.map(async (url) => {
           const t = await getType(url)
           return t
         })
       )
+      newPokemon.types = types.map(t => t.name)
+      newPokemon.typesEn = types.map(t => t.nameEn)
       setPokemon(newPokemon)
       setError(undefined)
     } catch (newError) {
+      console.error(newError)
       setError(`Error al buscar '${searchStr}': ${newError.message}`)
       setPokemon(undefined)
     }

@@ -24,7 +24,7 @@ const getSpeciesData = async (speciesUrl) => {
   
   return {
     descs,
-    genus: genus.genus.toLowerCase(),
+    genus: genus?.genus.toLowerCase(),
   }
 }
 

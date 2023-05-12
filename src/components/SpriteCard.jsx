@@ -1,20 +1,26 @@
-import { Box, Heading, Image } from '@chakra-ui/react'
 import { useState } from 'react'
+import { Box, Heading, Image } from '@chakra-ui/react'
 
 const SpriteCard = (props) => {
   const { pokemon } = props
-  const { id, name, spriteUrl, shinySpriteUrl } = getData(pokemon)
+  if (!pokemon) {
+    return null
+  }
+  const { id, name, typesEn, spriteUrl, shinySpriteUrl } = pokemon
   const [ isShiny, setIsShiny ] = useState(false)
 
   const onBigCircleClick = () => {
     setIsShiny(!isShiny)
   }
-  
+
   return (
     <Box className="sprite-card" >
       <Box className="h-center" >
-        <div className="small-circle crimson-background" />
-        <div className="small-circle crimson-background" />
+        { 
+          typesEn?.map(te => (
+            <div key={ te } className={ `small-circle ${te}-type-background` } />
+          ))
+        }
       </Box>
       <Box className="h-center sprite-box">
         <Image className="sprite"
@@ -36,17 +42,6 @@ const SpriteCard = (props) => {
       </Box>
     </Box>
   )
-}
-
-const ARBOK = {
-  id: 24,
-  name: 'arbok',
-  spriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/24.png',
-  shinySpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/24.png',
-}
-
-const getData = (pokemon) => {
-  return pokemon ? pokemon : ARBOK
 }
 
 export default SpriteCard
