@@ -1,11 +1,10 @@
 import { Box, Text } from "@chakra-ui/react"
 
 import { hg2kg, dm2m } from '../utils/units'
-import { roundToOneDecimalDigit } from '../utils/numbers'
 
 const Details = (props) => {
   const { pokemon } = props
-  const { id, name, types, genus, height, weight, isShiny } = getData(pokemon)
+  const { id, name, types, genus, height, weight } = getData(pokemon)
   
   return (
     <Box className="details-card">
@@ -22,18 +21,11 @@ const Details = (props) => {
         Género: { genus }
       </Text>
       <Text as="p" fontSize="sm">
-        Peso: { roundToOneDecimalDigit(hg2kg(weight)) } kg
+        Peso: { hg2kg(weight).toFixed(1) } kg
       </Text>
       <Text as="p" fontSize="sm">
-        Altura: { roundToOneDecimalDigit(dm2m(height)) } m
+        Altura: { dm2m(height).toFixed(1) } m
       </Text>
-      {
-        isShiny && (
-          <Text as="p" fontSize="sm">
-            ¡Es shiny!
-          </Text>
-        )
-      }
     </Box>
   )
 }
@@ -45,7 +37,6 @@ const ARBOK = {
   genus: 'pokémon cobra',
   height: 35,
   weight: 650,
-  isShiny: false,
 }
 
 const getData = (pokemon) => {
