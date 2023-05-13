@@ -2,11 +2,12 @@ name: deploy
 
 on:
   push:
-    branches:
+    branches: 
       - github-pages
 
 jobs:
   build:
+    name: build
     runs-on: ubuntu-latest
 
     steps:
