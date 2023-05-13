@@ -3,7 +3,7 @@ name: deploy
 on:
   push:
     branches:
-      - ['github-pages']
+      - github-pages
 
 jobs:
   build:
