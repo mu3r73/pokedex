@@ -1,6 +1,7 @@
 import getErrorDescription from '../utils/httpErrors'
 
 const LANG_ES = 'es'
+const LANG_JA = 'ja'
 
 const getSpeciesData = async (speciesUrl) => {
   const res = await fetch(speciesUrl)
@@ -21,10 +22,12 @@ const getSpeciesData = async (speciesUrl) => {
     })
   
   const genus = data.genera.find(g => g.language.name === LANG_ES)
+  const nameJp = data.names.find(n => n.language.name === LANG_JA)
   
   return {
     descs,
     genus: genus?.genus.toLowerCase(),
+    nameJp: nameJp.name,
   }
 }
 
