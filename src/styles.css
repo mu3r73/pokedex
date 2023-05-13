@@ -101,6 +101,15 @@
   justify-content: right;
 }
 
+.search-input {
+  max-width: 31.5rem;
+}
+
+.search-btn {
+  margin-left: .2rem;
+  width: 3rem;
+}
+
 .column {
   display: flex;
   flex-direction: column; 
@@ -142,10 +151,6 @@
 
 .crimson-background {
   background-color: crimson;
-}
-
-.blue-background {
-  background-color: deepskyblue;
 }
 
 .shiny-background {
