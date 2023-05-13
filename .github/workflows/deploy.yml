@@ -7,26 +7,26 @@ on:
 
 jobs:
   build:
-    name: build
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
+      - name: checkout repo
+        uses: actions/checkout@v2
 
       - name: setup node
-      - uses: actions/setup-node@v3
+        uses: actions/setup-node@v1
         with:
           node-version: 18
 
       - name: install dependencies
-        uses: npm ci
+        uses: bahmutov/npm-install@v1
 
-      - name: build
+      - name: build project
         run: npm run build
 
-      - name: upload artifact
-        uses: actions/upload-artifact@v3
+      - name: upload production-ready build files
+        uses: actions/upload-artifact@v2
         with:
           name: production-files
           path: ./dist
@@ -38,7 +38,7 @@ jobs:
 
     steps:
       - name: download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v2
         with:
           name: production-files
           path: ./dist
