@@ -1,11 +1,22 @@
-import { Box, SimpleGrid, Text } from "@chakra-ui/react"
+import { useEffect, useState } from 'react'
+import { Box, SimpleGrid, Text } from '@chakra-ui/react'
 
 import { hg2kg, dm2m } from '../utils/units'
+import ARBOK from '../data/arbok'
 
 const Details = (props) => {
   const { pokemon } = props
-  const { id, name, types, genus, height, weight } = getData(pokemon)
-  
+  const { id, name, nameJp, types, genus, height, weight } = pokemon || ARBOK
+  const [ showNameJp, setShowNameJp ] = useState(false)
+
+  const onNameClick = () => {
+    setShowNameJp(!showNameJp)
+  }
+
+  useEffect(() => {
+    setShowNameJp(false)
+  }, [pokemon])
+
   return (
     <Box className="details-card" color="white">
       <SimpleGrid columns={2}>
@@ -18,8 +29,10 @@ const Details = (props) => {
         <Text as="p" fontSize="sm">
           nombre:
         </Text>
-        <Text as="p" fontSize="sm">
-          { name }
+        <Text as="p" fontSize="sm"
+          onClick={ onNameClick }
+        >
+          { showNameJp ? nameJp : name }
         </Text>
         <Text as="p" fontSize="sm">
           tipo{ types.length > 1 ? 's' : '' }:
@@ -48,19 +61,6 @@ const Details = (props) => {
       </SimpleGrid>
     </Box>
   )
-}
-
-const ARBOK = {
-  id: 24,
-  name: 'arbok',
-  types: ['veneno'],
-  genus: 'pokémon cobra',
-  height: 35,
-  weight: 650,
-}
-
-const getData = (pokemon) => {
-  return pokemon ? pokemon : ARBOK
 }
 
 export default Details
