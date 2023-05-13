@@ -18,7 +18,8 @@ const useFetchPokemon = (searchStr) => {
       const newPokemon = await getPokemon(searchStr)
       const speciesData = await getSpeciesData(newPokemon.descriptionUrl)
       const { descs, genus } = speciesData
-      newPokemon.description = descs
+      console.info(speciesData.nameJp)
+      newPokemon.description = descs?.length > 0 ? descs : [ speciesData.nameJp ]
       newPokemon.genus = genus
       const types = await Promise.all(
         newPokemon.typesUrls.map(async (url) => {
