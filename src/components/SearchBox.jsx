@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { Box, IconButton, Input, InputGroup } from '@chakra-ui/react'
+import { Box, Button, Input, InputGroup, Spinner } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
 
 const SearchBox = (props) => {
-  const { onNewSearch } = props
+  const { isLoading, onNewSearch } = props
   const [ search, setSearch ] = useState('')
 
   const onInputChange = (event) => {
@@ -34,17 +34,34 @@ const SearchBox = (props) => {
         <form onSubmit={ onSearchClicked }>
           <InputGroup>
             <Input
+              className="search-input"
               type="text"
               placeholder="escribí un nombre o número de pokémon"
               value={ search }
               onChange={ onInputChange }
               onKeyPress={ onInputKeyPress }
             />
-            <IconButton
-              icon={ <SearchIcon /> }
-              disabled={ !search.length }
+
+            <Button
+              className="search-btn"
+              disabled={ isLoading } 
               onClick={ onSearchClicked }
-            />
+            >
+              {
+                isLoading
+                ? (
+                    <Spinner
+                      size="sm"
+                      color="blue.500"
+                      emptyColor="gray.500"
+                      thickness=".2rem"
+                    />
+                  )
+                : (
+                    <SearchIcon />
+                  )
+              }
+            </Button>
           </InputGroup>
         </form>
       </Box>
