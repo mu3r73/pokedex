@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Box, Heading, Image } from '@chakra-ui/react'
+import ARBOK from '../data/arbok'
 
 const SpriteCard = (props) => {
   const { pokemon } = props
-  const { id, name, typesEn, spriteUrl, shinySpriteUrl } = getData(pokemon)
+  const { id, name, typesEn, spriteUrl, shinySpriteUrl } = pokemon || ARBOK
   const [ isShiny, setIsShiny ] = useState(false)
 
   const onBigCircleClick = () => {
@@ -43,18 +44,6 @@ const SpriteCard = (props) => {
       </Box>
     </Box>
   )
-}
-
-const ARBOK = {
-  id: 24,
-  name: 'arbok',
-  typesEn: ['poison'],
-  spriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/24.png',
-  shinySpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/24.png',
-}
-
-const getData = (pokemon) => {
-  return pokemon ? pokemon : ARBOK
 }
 
 export default SpriteCard

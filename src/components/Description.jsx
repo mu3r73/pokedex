@@ -1,10 +1,11 @@
 import { Box, IconButton, Text } from "@chakra-ui/react"
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import { useEffect, useState } from "react"
+import ARBOK from "../data/arbok"
 
 const Description = (props) => {
   const { pokemon } = props
-  const { description } = getData(pokemon)
+  const { description } = pokemon || ARBOK
   const [ currentIndex, setCurrentIndex ] = useState(0)
 
   const onBackClicked = () => {
@@ -49,14 +50,6 @@ const Description = (props) => {
 
 const modulo = (num, max) => {
   return ((num % max) + max) % max
-}
-
-const ARBOK = {
-  description: ['アーボック']
-}
-
-const getData = (pokemon) => {
-  return pokemon ? pokemon : ARBOK
 }
 
 export default Description
