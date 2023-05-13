@@ -3,43 +3,35 @@ name: deploy
 on:
   push:
     branches:
-      - github-pages
+      - ['github-pages']
 
 jobs:
   build:
-    name: build
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v2
-
-      - name: setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 18
+      - name: checkout
+        uses: actions/checkout@v3
 
       - name: install dependencies
-        uses: bahmutov/npm-install@v1
+        uses: npm ci
 
-      - name: build project
+      - name: build
         run: npm run build
 
-      - name: upload production-ready build files
-        uses: actions/upload-artifact@v2
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
         with:
           name: production-files
           path: ./dist
 
   deploy:
-    name: deploy
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: download artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: production-files
           path: ./dist
