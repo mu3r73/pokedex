@@ -31,6 +31,8 @@ jobs:
           name: production-files
           path: ./dist
 
+  # TODO: tests
+
   deploy:
     name: deploy
     needs: build
