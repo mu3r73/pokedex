@@ -9,22 +9,22 @@ const Details = (props) => {
   return (
     <Box className="details-card" color="white">
       <Text as="p" fontSize="sm">
-        Número: { id }
+        número: { id }
       </Text>
       <Text as="p" fontSize="sm">
-        Nombre: { name }
+        nombre: { name }
       </Text>
       <Text as="p" fontSize="sm">
-        Tipo{ types.length > 1 ? 's' : '' }: { types.join(', ') }
+        tipo{ types.length > 1 ? 's' : '' }: { types.join(', ') }
       </Text>
       <Text as="p" fontSize="sm">
-        Género: { genus || '-' }
+        género: { genus || '-' }
       </Text>
       <Text as="p" fontSize="sm">
-        Peso: { hg2kg(weight).toFixed(1) } kg
+        peso: { hg2kg(weight).toFixed(1) } kg
       </Text>
       <Text as="p" fontSize="sm">
-        Altura: { dm2m(height).toFixed(1) } m
+        altura: { dm2m(height).toFixed(1) } m
       </Text>
     </Box>
   )
